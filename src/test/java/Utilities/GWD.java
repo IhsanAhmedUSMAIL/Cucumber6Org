@@ -43,9 +43,14 @@ public class GWD {
                     break; // ilgili threade bir driver set ettim
 
                 default:
-                    FirefoxOptions options=new FirefoxOptions();
-                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
-                    threadDriver.set(new FirefoxDriver(options));
+                    if(isRunningOnJenkins()) {
+                        FirefoxOptions options = new FirefoxOptions();
+                        options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                        threadDriver.set(new FirefoxDriver(options));
+                    }
+                    else {
+                        threadDriver.set(new ChromeDriver()); // ilgili threade bir driver set ettim
+                    }
 
                     //threadDriver.set(new ChromeDriver()); // ilgili threade bir driver set ettim
             }
@@ -78,6 +83,11 @@ public class GWD {
             threadDriver.set(driver); // kendisine null olarak ver, bu hatta bir dolu driver yok
 
         }
+    }
+
+    public static boolean isRunningOnJenkins() {
+        String jenkinsHome = System.getenv("JENKINS_HOME");
+        return jenkinsHome != null && !jenkinsHome.isEmpty();
     }
 
 }
