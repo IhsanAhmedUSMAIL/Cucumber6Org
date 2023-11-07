@@ -11,18 +11,10 @@
       Then User should login successfully
       And Navigate to Citizenship
 
-    Scenario Outline: Create a Citizenship
-      When Create a Citizenship name as "<name>" short name as "<shortname>"
+    Scenario: Create a Citizenship
+      When Create a Citizenship name as "ET45HI1" short name as "ET41"
       Then Success message should be displayed
 
-      When Create a Citizenship name as "<name>" short name as "<shortname>"
+      When Create a Citizenship name as "ET45HI1" short name as "ET41"
       Then Already exist message should be displayed
 
-      Examples:
-        | name   | shortname |
-        | ET0HI0 | ET410     |
-        | ET1HI1 | ET411     |
-        | ET2HI2 | ET412     |
-        | ET3HI3 | ET413     |
-        | ET4HI4 | ET414     |
-        | ET5HI5 | ET415     |

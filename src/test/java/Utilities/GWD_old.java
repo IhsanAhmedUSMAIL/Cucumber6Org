@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 import java.util.Locale;
 
-public class GWD {
+public class GWD_old {
 
     private static WebDriver driver;
     public static WebDriver getDriver() {

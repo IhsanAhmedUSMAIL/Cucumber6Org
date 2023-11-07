@@ -19,10 +19,10 @@
       Then Already exist message should be displayed
 
       Examples:
-        | name | shortname |
-        | ET0HI0 | ET410 |
-        | ET1HI1 | ET411 |
-        | ET2HI2 | ET412 |
-        | ET3HI3 | ET413 |
-        | ET4HI4 | ET414 |
-        | ET5HI5 | ET415 |
+        | name   | shortname |
+        | ET0HI0 | ET410     |
+        | ET1HI1 | ET411     |
+        | ET2HI2 | ET412     |
+        | ET3HI3 | ET413     |
+        | ET4HI4 | ET414     |
+        | ET5HI5 | ET415     |
