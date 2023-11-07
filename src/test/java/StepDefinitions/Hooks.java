@@ -22,11 +22,11 @@ public class Hooks {
     public void after(Scenario senaryo)
     {
         // extent reportun plugin aktif iken açık kalsın
-        if (senaryo.isFailed()) {
-            TakesScreenshot ts=((TakesScreenshot) GWD.getDriver());
-            byte[] hafizadakiHali=ts.getScreenshotAs(OutputType.BYTES);
-            senaryo.attach(hafizadakiHali, "image/png", "screenshot name");
-        }
+      // if (senaryo.isFailed()) {
+      //     TakesScreenshot ts=((TakesScreenshot) GWD.getDriver());
+      //     byte[] hafizadakiHali=ts.getScreenshotAs(OutputType.BYTES);
+      //     senaryo.attach(hafizadakiHali, "image/png", "screenshot name");
+      // }
 
         //System.out.println("Senaryo bitti ?");
         // doru çalışırsa burda quit çağıracağım
