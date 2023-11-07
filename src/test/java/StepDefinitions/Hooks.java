@@ -21,6 +21,9 @@ public class Hooks {
     @After // Cucumber ın Annotation ı
     public void after(Scenario senaryo)
     {
+        // ExcelUtility.writeToExcel("src/test/java/ApachePOI/resource/SenaryoSonuclari3.xlsx",
+        //                senaryo);
+
         // extent reportun plugin aktif iken açık kalsın
       // if (senaryo.isFailed()) {
       //     TakesScreenshot ts=((TakesScreenshot) GWD.getDriver());

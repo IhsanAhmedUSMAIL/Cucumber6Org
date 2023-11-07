@@ -2,6 +2,7 @@ package Utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -40,7 +41,11 @@ public class GWD {
                     threadDriver.set(new EdgeDriver());
                     break; // ilgili threade bir driver set ettim
 
-                default: threadDriver.set(new ChromeDriver()); // ilgili threade bir driver set ettim
+                default:
+                    //Jenkins için Chrome memory maximize
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                    threadDriver.set(new ChromeDriver()); // ilgili threade bir driver set ettim
             }
         }
 
